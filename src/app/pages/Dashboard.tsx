@@ -281,7 +281,7 @@ export function Dashboard() {
 
         </div>
       </div>
-      
+
       {/* Industry Benchmarking */}
 
       <div className="bg-card rounded-xl p-6 border border-border shadow-sm">
@@ -336,8 +336,8 @@ export function Dashboard() {
 
         </div>
 
-      </div>  
-      
+      </div>
+
       {/* Trend Detection */}
 
       <div className="bg-card rounded-xl p-6 border border-border shadow-sm">
@@ -386,7 +386,7 @@ export function Dashboard() {
         </div>
 
       </div>
-      
+
       {/* Recent Activity & Quick Actions */}
       <div className="grid grid-cols-3 gap-6">
         {/* Recent Activity */}
@@ -395,7 +395,7 @@ export function Dashboard() {
           <div className="space-y-4">
             {recentActivity.map((activity, index) => (
               <div key={index} className="flex items-center justify-between p-4 bg-muted/50 rounded-xl hover:bg-muted transition-colors">
-                
+
                 <div className="flex items-center gap-3 flex-1">
 
                   {activity.status === "new" && (
@@ -429,16 +429,15 @@ export function Dashboard() {
                   </div>
 
                 </div>
-                
+
                 <div className="flex items-center gap-4">
                   <span className="text-sm text-muted-foreground">{activity.time}</span>
-                  <span className={`px-3 py-1 rounded-lg text-xs font-medium ${
-                    activity.status === 'new' ? 'bg-blue-100 text-blue-700' :
-                    activity.status === 'hiring' ? 'bg-green-100 text-green-700' :
-                    activity.status === 'updated' ? 'bg-purple-100 text-purple-700' :
-                    activity.status === 'meeting' ? 'bg-orange-100 text-orange-700' :
-                    'bg-gray-100 text-gray-700'
-                  }`}>
+                  <span className={`px-3 py-1 rounded-lg text-xs font-medium ${activity.status === 'new' ? 'bg-blue-100 text-blue-700' :
+                      activity.status === 'hiring' ? 'bg-green-100 text-green-700' :
+                        activity.status === 'updated' ? 'bg-purple-100 text-purple-700' :
+                          activity.status === 'meeting' ? 'bg-orange-100 text-orange-700' :
+                            'bg-gray-100 text-gray-700'
+                    }`}>
                     {activity.status}
                   </span>
                 </div>
@@ -463,6 +462,20 @@ export function Dashboard() {
             <button className="w-full px-4 py-3 bg-muted text-foreground rounded-xl hover:bg-muted/80 transition-colors">
               Export Data
             </button>
+            <input
+              type="file"
+              id="uploadFile"
+              className="hidden"
+              onChange={(e) => console.log(e.target.files?.[0])}
+            />
+
+            <button
+              onClick={() => document.getElementById('uploadFile')?.click()}
+              className="w-full px-4 py-3 bg-green-600 text-white rounded-xl hover:bg-green-700 transition-colors"
+            >
+              Upload Data
+            </button>
+
           </div>
 
           <div className="mt-6 p-4 bg-accent rounded-xl">

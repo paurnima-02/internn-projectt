@@ -303,9 +303,14 @@ export function Dashboard() {
             className: "w-full px-4 py-3 bg-muted text-foreground rounded-xl hover:bg-muted/80 transition-colors",
             children: "Generate Report"
           }, void 0, false), /*#__PURE__*/_jsxDEV("button", {
-            className: "w-full px-4 py-3 bg-muted text-foreground rounded-xl hover:bg-muted/80 transition-colors",
-            children: "Export Data"
-          }, void 0, false)]
+  className: "w-full px-4 py-3 bg-muted text-foreground rounded-xl hover:bg-muted/80 transition-colors",
+  children: "Export Data"
+}, void 0, false),
+
+/*#__PURE__*/_jsxDEV("button", {
+  className: "w-full px-4 py-3 bg-muted text-foreground rounded-xl hover:bg-muted/80 transition-colors",
+  children: "Upload Data"
+}, void 0, false)]
         }, void 0, true), /*#__PURE__*/_jsxDEV("div", {
           className: "mt-6 p-4 bg-accent rounded-xl",
           children: [/*#__PURE__*/_jsxDEV("p", {
