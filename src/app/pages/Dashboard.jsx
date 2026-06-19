@@ -463,8 +463,11 @@ export function Dashboard() {
             <button className="w-full px-4 py-3 bg-muted text-foreground rounded-xl hover:bg-muted/80 transition-colors">
               Export Data
             </button>
+            <button className="w-full px-4 py-3 bg-muted text-foreground rounded-xl hover:bg-muted/80 transition-colors">
+              Upload Data
+            </button>
           </div>
-
+          
           <div className="mt-6 p-4 bg-accent rounded-xl">
             <p className="text-sm font-medium text-accent-foreground mb-1">Pro Tip</p>
             <p className="text-xs text-muted-foreground">
