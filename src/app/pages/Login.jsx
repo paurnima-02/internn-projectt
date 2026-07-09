@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router";
 import { Eye, EyeOff, TrendingUp, Lock, AlertCircle } from "lucide-react";
+import { useAuth } from "../context/AuthContext";
 
 export function Login() {
   const [formData, setFormData] = useState({ email: '', password: '' });
@@ -19,6 +20,7 @@ export function Login() {
   });
   const [serverBusy, setServerBusy] = useState(false);
   const navigate = useNavigate();
+  const { login } = useAuth();
 
   useEffect(() => {
     localStorage.clear();
@@ -99,6 +101,18 @@ export function Login() {
       setError('Network error. Please try again.');
       setLoading(false);
     }
+    
+    if (
+      formData.email === "admin@cip.com" &&
+      formData.password === "Admin@123"
+    ) {
+      login(formData.email, formData.password);
+      navigate("/");
+    } else {
+      setError("Invalid email or password");
+    }
+
+    setLoading(false);
   };
 
   const requestOTP = async (email) => {

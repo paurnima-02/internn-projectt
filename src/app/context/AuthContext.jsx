@@ -11,13 +11,27 @@ export function AuthProvider({
   children
 }) {
   const [user, setUser] = useState(null);
-  const login = (email, _password) => {
-    const initials = email.split("@")[0].split(".").map(p => p[0]?.toUpperCase() ?? "").join("").slice(0, 2);
+  const login = (email, password) => {
+    if (
+      email !== "admin@cip.com" ||
+      password !== "Admin@123"
+    ) {
+      return false;
+    }
+
+    const initials = email
+      .split("@")[0]
+      .split(".")
+      .map((p) => p[0]?.toUpperCase() ?? "")
+      .join("")
+      .slice(0, 2);
+
     setUser({
       ...DEMO_USER,
       email,
-      initials: initials || "U"
+      initials: initials || "U",
     });
+
     return true;
   };
   const register = (name, email, _password) => {
