@@ -3,7 +3,7 @@ import { Outlet, NavLink, useNavigate } from "react-router";
 import { LayoutDashboard, Building2, PlusCircle, Users, FileText, BarChart3, UserCog, Settings as SettingsIcon, Bell, ChevronDown, TrendingUp, LogOut, User, Shield, X, CheckCircle2, AlertCircle, Info, Moon, Sun } from "lucide-react";
 import { useAuth } from "../context/AuthContext";
 import { useTheme } from "../context/ThemeContext";
-import CIPAssistant from "./CIPAssistant";
+import SarthiDBAssistant from "./SarthiDBAssistant";
 import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";
 const notifications = [{
   id: 1,
@@ -133,10 +133,10 @@ export function Layout() {
           }, void 0, false), /*#__PURE__*/_jsxDEV("div", {
             children: [/*#__PURE__*/_jsxDEV("div", {
               className: "text-white font-bold text-base leading-tight",
-              children: "CIP"
+              children: "sarthiDB"
             }, void 0, false), /*#__PURE__*/_jsxDEV("div", {
               className: "text-[#93b4ff] text-[10px] leading-tight",
-              children: "Corporate Intelligence"
+              children: "sarthiDB (Smart Data Platform)"
             }, void 0, false)]
           }, void 0, true)]
         }, void 0, true)
@@ -357,7 +357,7 @@ export function Layout() {
         className: `flex-1 overflow-auto p-6 ${darkMode ? "bg-[#0a0e1a]" : ""}`,
         children: /*#__PURE__*/_jsxDEV(Outlet, {}, void 0, false)
       }, void 0, false)]
-    }, void 0, true), /*#__PURE__*/_jsxDEV(CIPAssistant, {
+    }, void 0, true), /*#__PURE__*/_jsxDEV(sarthiDBAssistant, {
       darkMode: darkMode
     }, void 0, false)]
   }, void 0, true);

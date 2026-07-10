@@ -13,7 +13,7 @@ export function AuthProvider({
   const [user, setUser] = useState(null);
   const login = (email, password) => {
     if (
-      email !== "admin@cip.com" ||
+      email !== "admin@sarthiDB.com" ||
       password !== "Admin@123"
     ) {
       return false;
