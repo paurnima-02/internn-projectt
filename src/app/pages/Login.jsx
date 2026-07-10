@@ -176,8 +176,8 @@ export function Login() {
               <TrendingUp className="w-10 h-10 text-white" />
             </div>
             <div>
-              <div className="text-white font-bold text-3xl leading-tight">CIP</div>
-              <div className="text-blue-200 text-sm">Corporate Intelligence Platform</div>
+              <div className="text-white font-bold text-3xl leading-tight">sarthiDB</div>
+              <div className="text-blue-200 text-sm">Smart Data Platform</div>
             </div>
           </div>
         </div>
@@ -193,8 +193,8 @@ export function Login() {
               <TrendingUp className="w-6 h-6 text-white" />
             </div>
             <div>
-              <div className="text-[#0f172a] font-bold text-lg">CIP</div>
-              <div className="text-[#4b5e9e] text-xs">Corporate Intelligence Platform</div>
+              <div className="text-[#0f172a] font-bold text-lg">sarthiDB</div>
+              <div className="text-[#4b5e9e] text-xs">Smart Data Platform</div>
             </div>
           </div>
 
