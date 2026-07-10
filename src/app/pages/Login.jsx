@@ -59,49 +59,6 @@ export function Login() {
       return;
     }
 
-    try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/auth/login`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
-
-      const data = await response.json();
-
-      if (response.ok) {
-        if (data.require2fa) {
-          setPartialAuthData({ email: data.email, name: data.name });
-          await requestOTP(data.email);
-          setRequire2fa(true);
-          setLoading(false);
-        } else {
-          completeLogin(data);
-        }
-      } else {
-        if (response.status === 503) {
-          setServerBusy(true);
-          setError('Server is busy. Please try again in a few minutes.');
-        } else {
-          setLoginData({
-            attempts: data.attempts || 0,
-            remainingAttempts: data.remainingAttempts || 0,
-            maxAttempts: data.totalAttempts || 3,
-            locked: data.locked || false,
-          });
-          setError(
-            data.locked ? 'Your account is locked. Contact administrator.' :
-            data.pending ? 'Account pending approval.' :
-            data.blocked ? 'Your account has been blocked.' :
-            data.message || 'Login failed.'
-          );
-        }
-        setLoading(false);
-      }
-    } catch (err) {
-      setError('Network error. Please try again.');
-      setLoading(false);
-    }
-    
     if (
       formData.email === "admin@cip.com" &&
       formData.password === "Admin@123"
