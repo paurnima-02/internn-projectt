@@ -185,6 +185,14 @@ export function Marketing() {
             />
           )}
 
+          {(activeChannel === "whatsapp" || activeChannel === "sms") && (
+            <input
+              type="tel"
+              placeholder="Phone number, e.g. +91 98765 43210 (leave blank to use audience segment)"
+              className={`mb-3 w-full rounded-xl px-4 py-2.5 text-sm focus:outline-none ${inputBase}`}
+            />
+          )}
+
           <textarea
             rows={6}
             placeholder={`Write your ${activeChannel === "email" ? "email" : "message"}... use {{company_name}} and {{contact_name}} to personalize`}
