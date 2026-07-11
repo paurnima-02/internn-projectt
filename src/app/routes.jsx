@@ -6,6 +6,7 @@ import { AddCompany } from "./pages/AddCompany";
 import { CompanyDetail } from "./pages/CompanyDetail";
 import { Contacts } from "./pages/Contacts";
 import { Reports } from "./pages/Reports";
+import { Marketing } from "./pages/Marketing";
 import { Analytics } from "./pages/Analytics";
 import { Users } from "./pages/Users";
 import { Settings } from "./pages/Settings";
@@ -56,6 +57,7 @@ export const router = createBrowserRouter([
       { path: "companies/:id", Component: CompanyDetail },
       { path: "contacts", Component: Contacts },
       { path: "reports", Component: Reports },
+      { path: "marketing", Component: Marketing },
       { path: "analytics", Component: Analytics },
       { path: "users", Component: Users },
       { path: "settings", Component: Settings },
