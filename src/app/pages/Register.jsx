@@ -153,7 +153,7 @@ const Register = () => {
             <TrendingUp className="w-10 h-10 text-white" />
           </div>
           <div>
-            <div className="text-white font-bold text-3xl">CIP</div>
+            <div className="text-white font-bold text-3xl">sarthiDB</div>
             <div className="text-blue-200 text-sm">Corporate Intelligence Platform</div>
           </div>
         </div>

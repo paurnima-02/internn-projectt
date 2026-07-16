@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { jsxDEV as _jsxDEV, Fragment as _Fragment } from "react/jsx-dev-runtime";
-const SYSTEM_PROMPT = `Act as a corporate research analyst for the Corporate Intelligence Platform (CIP). You help users find company data, research sectors, and analyze prospects in India.
+const SYSTEM_PROMPT = `Act as a corporate research analyst for sarthiDB (Smart Data Platform). You help users find company data, research sectors, and analyze prospects in India.
 
 When users ask for companies in a sector/city, use this approach:
 "Act as a corporate research analyst. Help me find a list of companies from the [SECTOR NAME] sector operating in [CITY NAME], India. For each company, provide: Company Name, Registered Office Address, Industry, Sub-Industry, Year of Establishment, Approximate Employee Strength, Official Website, and LinkedIn Page. Present the output in a clean table format."
@@ -10,11 +10,11 @@ When users ask for details on a specific company, use this approach:
 
 Always be helpful, concise, and format data in tables when listing multiple companies or data points.`;
 const QUICK_PROMPTS = ["Show me companies hiring in Mumbai", "Find IT companies in Bangalore", "Research Infosys company details", "Top finance companies in Delhi"];
-export default function CIPAssistant() {
+export default function SarthiDBAssistant() {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState([{
     role: "assistant",
-    content: "Hi! I'm your CIP Assistant. Ask me to find companies by sector/city, or get detailed research on any company."
+content: "Hi! I'm your sarthiDB Assistant. Ask me to find companies by sector/city, or get detailed research on any company."
   }]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
@@ -136,7 +136,7 @@ export default function CIPAssistant() {
                 fontWeight: 600,
                 fontSize: "14px"
               },
-              children: "CIP Assistant"
+              children: "sarthiDB Assistant"
             }, void 0, false), /*#__PURE__*/_jsxDEV("div", {
               style: {
                 color: "rgba(255,255,255,0.75)",

@@ -1,60 +1,34 @@
-import { createContext, useContext, useState, ReactNode } from "react";
-import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";
-const AuthContext = /*#__PURE__*/createContext(null);
-const DEMO_USER = {
-  name: "John Doe",
-  email: "john.doe@corp.com",
-  role: "Administrator",
-  initials: "JD"
-};
-export function AuthProvider({
-  children
-}) {
-  const [user, setUser] = useState(null);
-  const login = (email, password) => {
-    if (
-      email !== "admin@cip.com" ||
-      password !== "Admin@123"
-    ) {
-      return false;
+import { createContext, useContext, useState } from "react";
+
+const AuthContext = createContext(null);
+
+export function AuthProvider({ children }) {
+  const [user, setUser] = useState(() => {
+    const token = localStorage.getItem('token');
+    const userName = localStorage.getItem('userName');
+    const userEmail = localStorage.getItem('userEmail');
+    if (token && userEmail) {
+      return { name: userName, email: userEmail, token };
     }
+    return null;
+  });
 
-    const initials = email
-      .split("@")[0]
-      .split(".")
-      .map((p) => p[0]?.toUpperCase() ?? "")
-      .join("")
-      .slice(0, 2);
-
-    setUser({
-      ...DEMO_USER,
-      email,
-      initials: initials || "U",
-    });
-
-    return true;
+  const login = (userData) => {
+    setUser(userData);
   };
-  const register = (name, email, _password) => {
-    const initials = name.split(" ").map(p => p[0]?.toUpperCase() ?? "").join("").slice(0, 2);
-    setUser({
-      name,
-      email,
-      role: "User",
-      initials: initials || "U"
-    });
-    return true;
+
+  const logout = () => {
+    localStorage.clear();
+    setUser(null);
   };
-  const logout = () => setUser(null);
-  return /*#__PURE__*/_jsxDEV(AuthContext.Provider, {
-    value: {
-      user,
-      login,
-      register,
-      logout
-    },
-    children: children
-  }, void 0, false);
+
+  return (
+    <AuthContext.Provider value={{ user, login, logout }}>
+      {children}
+    </AuthContext.Provider>
+  );
 }
+
 export function useAuth() {
   const ctx = useContext(AuthContext);
   if (!ctx) throw new Error("useAuth must be used within AuthProvider");
