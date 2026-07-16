@@ -5,7 +5,9 @@ import { Companies } from "./pages/Companies";
 import { AddCompany } from "./pages/AddCompany";
 import { CompanyDetail } from "./pages/CompanyDetail";
 import { Contacts } from "./pages/Contacts";
+import { Database } from "./pages/Database";
 import { Reports } from "./pages/Reports";
+import { Marketing } from "./pages/Marketing";
 import { Analytics } from "./pages/Analytics";
 import { Users } from "./pages/Users";
 import { Settings } from "./pages/Settings";
@@ -55,7 +57,9 @@ export const router = createBrowserRouter([
       { path: "companies/add", Component: AddCompany },
       { path: "companies/:id", Component: CompanyDetail },
       { path: "contacts", Component: Contacts },
+      { path: "database", Component: Database },
       { path: "reports", Component: Reports },
+      { path: "marketing", Component: Marketing },
       { path: "analytics", Component: Analytics },
       { path: "users", Component: Users },
       { path: "settings", Component: Settings },

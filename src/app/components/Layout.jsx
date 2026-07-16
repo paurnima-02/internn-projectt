@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { Outlet, NavLink, useNavigate } from "react-router";
-import { LayoutDashboard, Building2, PlusCircle, Users, FileText, BarChart3, UserCog, Settings as SettingsIcon, Bell, ChevronDown, TrendingUp, LogOut, User, Shield, X, CheckCircle2, AlertCircle, Info, Moon, Sun } from "lucide-react";
+import { LayoutDashboard, Building2, PlusCircle, Users, FileText, BarChart3, Megaphone, Database, UserCog, Settings as SettingsIcon, Bell, ChevronDown, TrendingUp, LogOut, User, Shield, X, CheckCircle2, AlertCircle, Info, Moon, Sun } from "lucide-react";
 import { useAuth } from "../context/AuthContext";
 import { useTheme } from "../context/ThemeContext";
 import SarthiDBAssistant from "./SarthiDBAssistant";
@@ -70,7 +70,9 @@ export function Layout() {
     { path: "/companies", label: "Companies", icon: Building2 },
     { path: "/companies/add", label: "Add Company", icon: PlusCircle },
     { path: "/contacts", label: "Contacts", icon: Users },
+    { path: "/database", label: "Database", icon: Database },
     { path: "/reports", label: "Reports", icon: FileText },
+    { path: "/marketing", label: "Marketing", icon: Megaphone },
     { path: "/analytics", label: "Analytics", icon: BarChart3 },
     { path: "/users", label: "Users", icon: UserCog },
   ];
