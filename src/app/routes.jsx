@@ -15,7 +15,7 @@ import { Security } from "./pages/Security";
 import { Account } from "./pages/Account";
 import { Login } from "./pages/Login";
 import { Register } from "./pages/Register";
-import ForgotPassword from "./pages/forgetpassword";
+import ForgotPassword from "./pages/ForgetPassword";
 import ResetPassword from "./pages/ResetPassword";
 import { useAuth } from "./context/AuthContext";
 
